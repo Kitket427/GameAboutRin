@@ -2,26 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.Audio;
 
 public class Rindik : MonoBehaviour
 {
     private Animator[] anim;
     private Rigidbody2D rb;
-    [SerializeField] private float speed, movespeed, jumpForce;
+    [SerializeField] private float speed, movespeed, jumpForce, timeDeactive;
     [SerializeField] private LayerMask layer;
+    [SerializeField] private LayerMask enLayer;
     [SerializeField] private Transform posJump;
     [SerializeField] private Vector2 hitboxJump;
     private bool isGround;
-    private float timeDeactive;
+    private bool isEnemy;
     [SerializeField] private CinemachineVirtualCamera prioIdle;
     [SerializeField] private CinemachineBrain brainIdle;
     [SerializeField] private GameObject[] faces;
     [SerializeField] private Transform eyes;
-    private bool start;
+    private bool start, jump;
+    private AudioSource sfx;
+    [SerializeField] private AudioMixerGroup mixerGroup;
+    private float ostSpeed;
     private void Start()
     {
+        sfx = GetComponent<AudioSource>();
         anim = GetComponentsInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        if(timeDeactive < 16) ostSpeed = 1;
+        else ostSpeed = 0.3f;
     }
     private void FixedUpdate()
     {
@@ -47,16 +55,26 @@ public class Rindik : MonoBehaviour
 
         isGround = Physics2D.OverlapBox(posJump.position, hitboxJump, 0, layer);
         anim[0].SetBool("ground", isGround);
-
-        if(Input.GetKeyDown(KeyCode.Z) && isGround)
+        isEnemy = Physics2D.OverlapBox(posJump.position, hitboxJump, 0, enLayer);
+        if (isEnemy && isGround == false)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce * 7);
+            timeDeactive = 0;
+            start = true;
+            anim[0].SetTrigger("attack");
+        }
+        if (Input.GetKeyDown(KeyCode.Z) && isGround)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce * 10);
             timeDeactive = 0;
             start = true;
+            jump = true;
+            sfx.Play();
         }
-        if (Input.GetKeyUp(KeyCode.Z) && rb.velocity.y > 0)
+        if (Input.GetKeyUp(KeyCode.Z) && rb.velocity.y > 0 && jump)
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
+            jump = false;
         }
         if(rb.velocity.y < -75) rb.velocity = new Vector2(rb.velocity.x, -75);
 
@@ -91,5 +109,16 @@ public class Rindik : MonoBehaviour
             brainIdle.m_DefaultBlend.m_Time = 1.5f;
         }
         timeDeactive += Time.deltaTime;
+        if(timeDeactive > 10)
+        {
+            if (ostSpeed > 0.4f) ostSpeed -= Time.deltaTime / 20f;
+            else ostSpeed = 0.4f;
+        }
+        else
+        {
+            if (ostSpeed < 1) ostSpeed += Time.deltaTime;
+            else ostSpeed = 1f;
+        }
+        mixerGroup.audioMixer.SetFloat("ostSpeed", ostSpeed);
     }
 }

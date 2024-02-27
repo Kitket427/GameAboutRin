@@ -11,11 +11,11 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - Player
+  - DamagePl
+  - DamageEn
+  - Dead
   - 
   - 
   - 
@@ -41,6 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Enemy
+    uniqueID: 3823840707
+    locked: 0
   - name: Player
     uniqueID: 3827598851
+    locked: 0
+  - name: Effect
+    uniqueID: 3208723459
     locked: 0
