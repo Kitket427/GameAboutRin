@@ -11,6 +11,8 @@ public class EnemyHP : MonoBehaviour, ITakeDamage
     private bool timerWay;
     private AudioSource sfx;
     [SerializeField] private GameObject[] effects;
+    [SerializeField] private bool effectRotate;
+    [SerializeField] private AudioSource ostBoss;
     private void Start()
     {
         sfx = GetComponent<AudioSource>();
@@ -34,6 +36,7 @@ public class EnemyHP : MonoBehaviour, ITakeDamage
             {
                 sprite.color = new Color(1, timer, timer);
             }
+            if(ostBoss)ostBoss.pitch = 1.2f;
         }
         else
         {
@@ -71,7 +74,14 @@ public class EnemyHP : MonoBehaviour, ITakeDamage
         CancelInvoke();
         for (int i = 2; i < effects.Length; i++)
         {
-            Instantiate(effects[i], transform.position,Quaternion.identity);
+            if (effectRotate && transform.localScale.x == -1)
+            {
+                Instantiate(effects[i], transform.position, Quaternion.Euler(0,180,0));
+            }
+            else
+            {
+                Instantiate(effects[i], transform.position, Quaternion.identity);
+            }
             gameObject.SetActive(false);
         }
     }
