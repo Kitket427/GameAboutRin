@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHP : MonoBehaviour
+public class EnemyHP : MonoBehaviour, ITakeDamage
 {
     [SerializeField] private int hp, maxHp;
     [SerializeField] private SpriteRenderer[] sprites;
@@ -43,7 +43,7 @@ public class EnemyHP : MonoBehaviour
             }
         }
     }
-    public void TakeDamage(int damage)
+    void ITakeDamage.TakeDamage(int damage)
     {
         hp -= damage;
         foreach (var sprite in sprites)
