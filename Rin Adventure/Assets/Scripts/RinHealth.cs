@@ -31,12 +31,14 @@ public class RinHealth : MonoBehaviour, ITakeDamage
     {
         if (shield == false)
         {
-            lifes -= damage;
+            if (damage < 99) lifes -= 1;
+            else lifes = 0;
             UIactive();
             InvokeRepeating(nameof(Blink), 0, 0.07f);
-            Invoke(nameof(BlinkStop), 2.5f);
+            Invoke(nameof(BlinkStop), 1.2f);
             Instantiate(effect, transform.position, Quaternion.identity);
             shield = true;
+            Debug.Log("Hit");
         }
     }
     void Blink()
@@ -48,7 +50,6 @@ public class RinHealth : MonoBehaviour, ITakeDamage
                 sprite.material = materials[0];
             }
             blink = false;
-            Debug.Log("Material 1");
         }
         else
         {
@@ -57,7 +58,6 @@ public class RinHealth : MonoBehaviour, ITakeDamage
                 sprite.material = materials[1];
             }
             blink = true;
-            Debug.Log("Material 0");
         }
     }
     void BlinkStop()
@@ -68,6 +68,5 @@ public class RinHealth : MonoBehaviour, ITakeDamage
         {
             sprite.material = materials[0];
         }
-        Debug.Log("Material Stop");
     }
 }

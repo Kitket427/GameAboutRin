@@ -134,7 +134,7 @@ MonoBehaviour:
   damage: 1
   attack: 1
   reload: 0
-  time: 1
+  time: 0.1
   colliders:
   - {fileID: 1966443564243408752}
   - {fileID: 1531334969397302428}
@@ -321,7 +321,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 706941850096953949}
-  - component: {fileID: 4341552191239498118}
+  - component: {fileID: 8304823376021025526}
   - component: {fileID: 2814847776746781498}
   - component: {fileID: 5768822196928663911}
   - component: {fileID: 1850643614452495723}
@@ -353,7 +353,7 @@ Transform:
   - {fileID: 4341441053108415083}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4341552191239498118
+--- !u!114 &8304823376021025526
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -366,7 +366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrolPos: []
-  speed: 70
+  speed: 60
   animSpeed: 0
 --- !u!95 &2814847776746781498
 Animator:
@@ -457,6 +457,8 @@ MonoBehaviour:
   - {fileID: 1064459362711097383, guid: 412178e62e9005544b0b939855b0c959, type: 3}
   - {fileID: 4140915596401137582, guid: 9646646a35f7cf645a72ddbf6f09b9ef, type: 3}
   - {fileID: 3205562231560830767, guid: eb2ea23b03ebf8841b326facfb326fb1, type: 3}
+  effectRotate: 1
+  ostBoss: {fileID: 0}
 --- !u!82 &5344047395847956353
 AudioSource:
   m_ObjectHideFlags: 0

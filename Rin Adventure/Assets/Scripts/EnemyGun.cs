@@ -1,0 +1,75 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EnemyGun : MonoBehaviour
+{
+    private Animator anim;
+    private Rigidbody2D rb;
+    private Transform target;
+    [SerializeField] private float[] patrolPos;
+    [SerializeField] private float speed, animSpeed, currentSpeed, time, timeChill, reload;
+    [SerializeField] private int count, currentCount;
+    [SerializeField] private GameObject[] bullets;
+    [SerializeField] private Transform pos;
+    [SerializeField] private GameObject warning;
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        target = FindObjectOfType<Rindik>().GetComponent<Transform>();
+        anim.speed = speed * 0.03f;
+        anim.SetBool("minus", true);
+    }
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector2(speed * currentSpeed * transform.localScale.x, rb.velocity.y);
+    }
+    private void Update()
+    {
+        time += Time.deltaTime;
+        if (Vector2.Distance(transform.position, target.position) < 44 && time < timeChill)
+        {
+            currentSpeed = -1;
+        }
+        else
+        {
+            currentSpeed = 0;
+        }
+        if(rb.velocity.x > -0.1f && rb.velocity.x < 0.1f) anim.SetBool("move", false);
+        else anim.SetBool("move", true);
+        if (target.position.x < transform.position.x)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        if(time > timeChill + 1 && Vector2.Distance(transform.position, target.position) < 135)
+        {
+            foreach (var item in bullets)
+            {
+                if(transform.localScale.x == 1) Instantiate(item, pos.position, Quaternion.Euler(0,0,0));
+                else Instantiate(item, pos.position, Quaternion.Euler(0, 0, 180));
+            }
+            anim.SetTrigger("fire");
+            currentCount--;
+            time = timeChill + 1 - reload;
+        }
+        if (Vector2.Distance(transform.position, target.position) > 130) time = timeChill;
+        if (currentCount == 0)
+        {
+            currentCount = count;
+            time = 0;
+        }
+        if(time > timeChill + 0.4f)
+        {
+            warning.SetActive(true);
+        }
+        else
+        { 
+            warning.SetActive(false); 
+        }
+    }
+}

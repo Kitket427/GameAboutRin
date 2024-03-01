@@ -193,6 +193,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: PenguinSprite_4
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 6
+        width: 9
+        height: 6
+      alignment: 9
+      pivot: {x: 0.11111111, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 900765f64b0d5a04798cbf4c37ec1e7e
+      internalID: 794141409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -208,6 +229,7 @@ TextureImporter:
       PenguinSprite_1: -1080253396
       PenguinSprite_2: 1247237558
       PenguinSprite_3: 1918849579
+      PenguinSprite_4: 794141409
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

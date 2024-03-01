@@ -609,6 +609,8 @@ MonoBehaviour:
   - {fileID: 1064459362711097383, guid: 412178e62e9005544b0b939855b0c959, type: 3}
   - {fileID: 4140915596401137582, guid: 9646646a35f7cf645a72ddbf6f09b9ef, type: 3}
   - {fileID: 3205562231560830767, guid: eb2ea23b03ebf8841b326facfb326fb1, type: 3}
+  effectRotate: 1
+  ostBoss: {fileID: 0}
 --- !u!82 &1223880419992987934
 AudioSource:
   m_ObjectHideFlags: 0
