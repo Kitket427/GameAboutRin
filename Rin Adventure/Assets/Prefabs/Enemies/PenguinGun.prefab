@@ -325,7 +325,7 @@ MonoBehaviour:
   currentSpeed: 0
   time: 0
   timeChill: 2
-  reload: 0.3
+  reload: 0.2
   count: 3
   currentCount: 0
   bullets:
@@ -333,6 +333,7 @@ MonoBehaviour:
   - {fileID: 5236243122686555233, guid: 535b340071ce07a46a85f4b59be17ec8, type: 3}
   pos: {fileID: 3753315872676896971}
   warning: {fileID: 32086876941372347}
+  gun: {fileID: 9104317087482867405}
 --- !u!95 &5461790683184358474
 Animator:
   serializedVersion: 5
@@ -817,7 +818,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7620291750476569094
 Transform:
   m_ObjectHideFlags: 0

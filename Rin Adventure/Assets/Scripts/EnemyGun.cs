@@ -13,6 +13,8 @@ public class EnemyGun : MonoBehaviour
     [SerializeField] private GameObject[] bullets;
     [SerializeField] private Transform pos;
     [SerializeField] private GameObject warning;
+    private float rotateZ;
+    [SerializeField] private Transform gun;
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -27,6 +29,8 @@ public class EnemyGun : MonoBehaviour
     }
     private void Update()
     {
+        Vector3 difference = target.position - transform.position;
+        rotateZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         time += Time.deltaTime;
         if (Vector2.Distance(transform.position, target.position) < 44 && time < timeChill)
         {
@@ -41,17 +45,18 @@ public class EnemyGun : MonoBehaviour
         if (target.position.x < transform.position.x)
         {
             transform.localScale = new Vector3(-1, 1, 1);
+            gun.rotation = Quaternion.Euler(180, 180, rotateZ);
         }
         else
         {
             transform.localScale = new Vector3(1, 1, 1);
+            gun.rotation = Quaternion.Euler(0, 0, rotateZ);
         }
         if(time > timeChill + 1 && Vector2.Distance(transform.position, target.position) < 135)
         {
             foreach (var item in bullets)
             {
-                if(transform.localScale.x == 1) Instantiate(item, pos.position, Quaternion.Euler(0,0,0));
-                else Instantiate(item, pos.position, Quaternion.Euler(0, 0, 180));
+                Instantiate(item, pos.position, Quaternion.Euler(0, 0, rotateZ));
             }
             anim.SetTrigger("fire");
             currentCount--;

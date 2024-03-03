@@ -50,7 +50,7 @@ public class Rindik : MonoBehaviour
             start = true;
         }
         else movespeed = 0;
-        if (rb.velocity.x > -0.1f && rb.velocity.x < 0.1f) anim[0].SetBool("move", false);
+        if (rb.velocity.x > -1f && rb.velocity.x < 1f) anim[0].SetBool("move", false);
         else anim[0].SetBool("move", true);
 
         isGround = Physics2D.OverlapBox(posJump.position, hitboxJump, 0, layer);
