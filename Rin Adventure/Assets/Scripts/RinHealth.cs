@@ -38,7 +38,6 @@ public class RinHealth : MonoBehaviour, ITakeDamage
             Invoke(nameof(BlinkStop), 1.2f);
             Instantiate(effect, transform.position, Quaternion.identity);
             shield = true;
-            Debug.Log("Hit");
         }
     }
     void Blink()

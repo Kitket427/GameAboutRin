@@ -6,6 +6,7 @@ public class RinYandere : MonoBehaviour
 {
     [SerializeField] private bool attack;
     private AudioSource sfx;
+    [SerializeField] private Transform text;
     private void Start()
     {
         sfx = GetComponent<AudioSource>();
@@ -23,6 +24,7 @@ public class RinYandere : MonoBehaviour
                 transform.parent.localScale = new Vector3(1, 1, 1);
             }
         }
+        text.transform.localScale = new Vector3(transform.parent.localScale.x/5, transform.parent.localScale.y / 5, transform.parent.localScale.z / 5); ;
     }
     public void Attack()
     {

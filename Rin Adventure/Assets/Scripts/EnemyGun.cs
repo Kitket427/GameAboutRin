@@ -15,6 +15,7 @@ public class EnemyGun : MonoBehaviour
     [SerializeField] private GameObject warning;
     private float rotateZ;
     [SerializeField] private Transform gun;
+    private Animator animGun;
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -22,6 +23,7 @@ public class EnemyGun : MonoBehaviour
         target = FindObjectOfType<Rindik>().GetComponent<Transform>();
         anim.speed = speed * 0.03f;
         anim.SetBool("minus", true);
+        animGun = gun.GetComponentInChildren<Animator>();
     }
     private void FixedUpdate()
     {
@@ -58,7 +60,7 @@ public class EnemyGun : MonoBehaviour
             {
                 Instantiate(item, pos.position, Quaternion.Euler(0, 0, rotateZ));
             }
-            anim.SetTrigger("fire");
+            animGun.SetTrigger("fire");
             currentCount--;
             time = timeChill + 1 - reload;
         }
