@@ -15,6 +15,7 @@ public class EnemyKit1 : MonoBehaviour
     private float rotateZ;
     [SerializeField] private Transform[] gun;
     [SerializeField] private Animator[] animGun;
+    private OstSystem ost;
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -22,6 +23,7 @@ public class EnemyKit1 : MonoBehaviour
         target = FindObjectOfType<Rindik>().GetComponent<Transform>();
         anim.speed = speed * 0.03f;
         anim.SetBool("minus", true);
+        if (FindObjectOfType<OstSystem>()) ost = FindObjectOfType<OstSystem>();
     }
     private void FixedUpdate()
     {
@@ -32,22 +34,19 @@ public class EnemyKit1 : MonoBehaviour
         Vector3 difference = target.position - transform.position;
         rotateZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         time += Time.deltaTime;
-        if (time < timeChill)
+        if (Vector2.Distance(transform.position, target.position) < 12 / reload)
         {
-            if (Vector2.Distance(transform.position, target.position) < 66)
-            {
-                currentSpeed = -1;
-                anim.SetBool("minus", true);
-            }
-            else if (Vector2.Distance(transform.position, target.position) > 77)
-            {
-                currentSpeed = 1;
-                anim.SetBool("minus", false);
-            }
-            else
-            {
-                currentSpeed = 0;
-            }
+            currentSpeed = -1;
+            anim.SetBool("minus", true);
+        }
+        else if (Vector2.Distance(transform.position, target.position) > 15 / reload)
+        {
+            currentSpeed = 1;
+            anim.SetBool("minus", false);
+        }
+        else
+        {
+            currentSpeed = 0;
         }
         if (rb.velocity.x > -0.1f && rb.velocity.x < 0.1f) anim.SetBool("move", false);
         else anim.SetBool("move", true);
@@ -79,12 +78,19 @@ public class EnemyKit1 : MonoBehaviour
         }
         if (currentCount <= 0)
         {
-            currentCount = count;
             time = 0;
+            timeChill = Random.Range(0.6f, 1.8f);
+            if (reload > 0.11f) reload -= 0.1f;
+            else reload = 0.3f;
+            currentCount = count + (int)(reload * 10);
+            rb.velocity = new Vector2(rb.velocity.x, 111);
+            bullets[0].GetComponent<Bullet>().speed = 30 / reload;
+
         }
         if (time > timeChill + 0.4f)
         {
             warning.SetActive(true);
+            ost.Battle();
         }
         else
         {

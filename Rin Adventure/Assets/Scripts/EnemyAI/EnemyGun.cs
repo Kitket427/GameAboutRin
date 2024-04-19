@@ -16,6 +16,7 @@ public class EnemyGun : MonoBehaviour
     [SerializeField] private Transform gun;
     private Animator animGun;
     private float randomDistance;
+    private OstSystem ost;
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -24,6 +25,7 @@ public class EnemyGun : MonoBehaviour
         anim.speed = speed * 0.03f;
         anim.SetBool("minus", true);
         animGun = gun.GetComponentInChildren<Animator>();
+        if (FindObjectOfType<OstSystem>()) ost = FindObjectOfType<OstSystem>();
     }
     private void FixedUpdate()
     {
@@ -85,6 +87,7 @@ public class EnemyGun : MonoBehaviour
         if(time > timeChill + 0.4f)
         {
             warning.SetActive(true);
+            ost.Battle();
         }
         else
         { 
