@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyGun : MonoBehaviour
@@ -7,7 +8,7 @@ public class EnemyGun : MonoBehaviour
     private Animator anim;
     private Rigidbody2D rb;
     private Transform target;
-    [SerializeField] private float speed, animSpeed, currentSpeed, time, timeChill, reload;
+    [SerializeField] private float speed, animSpeed, currentSpeed, time, timeChill, reload, jumpHowManyInTen, jumpForce;
     [SerializeField] private int count, currentCount;
     [SerializeField] private GameObject[] bullets;
     [SerializeField] private Transform pos;
@@ -17,6 +18,7 @@ public class EnemyGun : MonoBehaviour
     private Animator animGun;
     private float randomDistance;
     private OstSystem ost;
+    [SerializeField] private bool notAim;
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -34,7 +36,12 @@ public class EnemyGun : MonoBehaviour
     private void Update()
     {
         Vector3 difference = target.position - transform.position;
-        rotateZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        if(notAim == false) rotateZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        else
+        {
+            if (transform.localScale.x == 1) rotateZ = 0;
+            else rotateZ = 180;
+        }
         time += Time.deltaTime;
         if (time < timeChill)
         {
@@ -81,6 +88,7 @@ public class EnemyGun : MonoBehaviour
         if (Vector2.Distance(transform.position, target.position) > 130) time = timeChill;
         if (currentCount <= 0)
         {
+            if (Random.Range(1, 11) < jumpHowManyInTen) rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             currentCount = count;
             time = 0;
         }

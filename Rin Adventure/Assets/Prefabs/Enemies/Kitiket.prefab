@@ -956,7 +956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70120edeec8459d45b39de25f2370581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 44
+  speed: 55
   animSpeed: 0
   currentSpeed: 0
   time: 0
@@ -1001,6 +1001,7 @@ MonoBehaviour:
   - {fileID: 4140915596401137582, guid: 9646646a35f7cf645a72ddbf6f09b9ef, type: 3}
   - {fileID: 3205562231560830767, guid: eb2ea23b03ebf8841b326facfb326fb1, type: 3}
   effectRotate: 1
+  fixedLayer: 0
 --- !u!95 &7761435893440851013
 Animator:
   serializedVersion: 5

@@ -12,10 +12,17 @@ public class EnemyHP : MonoBehaviour, ITakeDamage
     private AudioSource sfx;
     [SerializeField] private GameObject[] effects;
     [SerializeField] private bool effectRotate;
+    private int layer = 0;
+    [SerializeField] private bool fixedLayer;
     private void Start()
     {
         sfx = GetComponent<AudioSource>();
         if(sprites.Length == 0) sprites = GetComponentsInChildren<SpriteRenderer>();
+        if(fixedLayer == false)layer = Random.Range(30, 30000);
+        foreach (var sprite in sprites)
+        {
+            sprite.sortingOrder += layer;
+        }
     }
     private void Update()
     {

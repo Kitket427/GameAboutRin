@@ -228,6 +228,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 120
+  col: 0
+  deadEffect: {fileID: 2754995162242281556, guid: 870df3cde90aa4e49aa7b88d5d7bcf94, type: 3}
+  deadTime: 4
 --- !u!114 &5293525837618418631
 MonoBehaviour:
   m_ObjectHideFlags: 0

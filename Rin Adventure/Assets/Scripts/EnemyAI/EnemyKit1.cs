@@ -34,15 +34,18 @@ public class EnemyKit1 : MonoBehaviour
         Vector3 difference = target.position - transform.position;
         rotateZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         time += Time.deltaTime;
-        if (Vector2.Distance(transform.position, target.position) < 12 / reload)
+        if (time < timeChill)
         {
-            currentSpeed = -1;
-            anim.SetBool("minus", true);
-        }
-        else if (Vector2.Distance(transform.position, target.position) > 15 / reload)
-        {
-            currentSpeed = 1;
-            anim.SetBool("minus", false);
+            if (Vector2.Distance(transform.position, target.position) < 9 / reload)
+            {
+                currentSpeed = -1;
+                anim.SetBool("minus", true);
+            }
+            else if(Vector2.Distance(transform.position, target.position) > 10 / reload)
+            {
+                currentSpeed = 1;
+                anim.SetBool("minus", false);
+            }
         }
         else
         {
@@ -79,7 +82,7 @@ public class EnemyKit1 : MonoBehaviour
         if (currentCount <= 0)
         {
             time = 0;
-            timeChill = Random.Range(0.6f, 1.8f);
+            timeChill = Random.Range(1f, 2f);
             if (reload > 0.11f) reload -= 0.1f;
             else reload = 0.3f;
             currentCount = count + (int)(reload * 10);

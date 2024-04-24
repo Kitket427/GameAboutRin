@@ -357,6 +357,8 @@ MonoBehaviour:
   time: 0
   timeChill: 2
   reload: 0.2
+  jumpHowManyInTen: 3
+  jumpForce: 111
   count: 3
   currentCount: 0
   bullets:
@@ -365,6 +367,7 @@ MonoBehaviour:
   pos: {fileID: 3753315872676896971}
   warning: {fileID: 32086876941372347}
   gun: {fileID: 6543195179874066315}
+  notAim: 0
 --- !u!95 &5461790683184358474
 Animator:
   serializedVersion: 5
