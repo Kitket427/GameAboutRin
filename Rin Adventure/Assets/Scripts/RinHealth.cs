@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class RinHealth : MonoBehaviour, ITakeDamage
@@ -13,6 +14,7 @@ public class RinHealth : MonoBehaviour, ITakeDamage
     [SerializeField] private Material[] materials;
     [SerializeField] private bool blink;
     [SerializeField] private GameObject effect;
+    [SerializeField] private AudioMixerGroup mixerGroup;
     private void Start()
     {
         UIactive();
@@ -20,6 +22,18 @@ public class RinHealth : MonoBehaviour, ITakeDamage
         {
             sprite.material = materials[0];
         }
+    }
+    void Update()
+    {
+        if(Time.timeScale < 1 && Time.timeScale != 0)
+        {
+            Time.timeScale += Time.deltaTime;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+        mixerGroup.audioMixer.SetFloat("gameSpeed", Time.timeScale);
     }
     private void UIactive()
     {
@@ -29,13 +43,18 @@ public class RinHealth : MonoBehaviour, ITakeDamage
     }
     void ITakeDamage.TakeDamage(int damage)
     {
+        GetComponent<Rindik>().timeDeactive = 0;
         if (shield == false)
         {
-            if (damage < 99) lifes -= 1;
+            if (damage < 99)
+            {
+                lifes -= 1;
+                Time.timeScale = 0.1f;
+            }
             else lifes = 0;
             UIactive();
-            InvokeRepeating(nameof(Blink), 0, 0.07f);
-            Invoke(nameof(BlinkStop), 1.2f);
+            InvokeRepeating(nameof(Blink), 0, 0.04f);
+            Invoke(nameof(BlinkStop), 2f);
             Instantiate(effect, transform.position, Quaternion.identity);
             shield = true;
         }
@@ -68,4 +87,5 @@ public class RinHealth : MonoBehaviour, ITakeDamage
             sprite.material = materials[0];
         }
     }
+    
 }

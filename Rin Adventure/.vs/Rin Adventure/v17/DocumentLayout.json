@@ -3,15 +3,39 @@
   "WorkspaceRootPath": "D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|d:\\games\\unity\\gameaboutrin\\rin adventure\\assets\\scripts\\enemyai\\enemykit1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\assets\\scripts\\rinhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\rinhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|d:\\games\\unity\\gameaboutrin\\rin adventure\\assets\\scripts\\undertaletexteffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\undertaletexteffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\assets\\scripts\\rindik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\rindik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\assets\\scripts\\rinyandere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\rinyandere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\Assets\\Scripts\\EnemyHP.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\EnemyHP.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\assets\\scripts\\alert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\alert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\assets\\scripts\\enemyai\\enemykit1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyai\\enemykit1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|d:\\games\\unity\\gameaboutrin\\rin adventure\\assets\\scripts\\enemyai\\enemygun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\assets\\scripts\\enemyai\\enemygun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyai\\enemygun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|d:\\games\\unity\\gameaboutrin\\rin adventure\\assets\\scripts\\enemyai\\enemyhp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\assets\\scripts\\enemyai\\enemyhp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyai\\enemyhp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -31,32 +55,8 @@
       "RelativeMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\aim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\assets\\scripts\\rindik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\rindik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\assets\\ostsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|solutionrelative:assets\\ostsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\assets\\scripts\\alert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\alert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\assets\\scripts\\undertaletexteffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\undertaletexteffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\assets\\scripts\\rinyandere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\rinyandere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\assets\\scripts\\rinhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6788B37B-A75D-880D-26A1-77FB81AB19FB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\rinhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\Assets\\Scripts\\EnemyHP.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\EnemyHP.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\Assets\\Scripts\\EnemyKnife.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -74,24 +74,25 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 1,
               "Title": "UndertaleTextEffect.cs",
               "DocumentMoniker": "D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\Assets\\Scripts\\UndertaleTextEffect.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UndertaleTextEffect.cs",
               "ToolTip": "D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\Assets\\Scripts\\UndertaleTextEffect.cs",
               "RelativeToolTip": "Assets\\Scripts\\UndertaleTextEffect.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAA5wBAAAAAkAAAA",
+              "ViewState": "AQIAACYAAAAAAAAAAAAIwDQAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-04T12:36:44.366Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "DamageObj.cs",
               "DocumentMoniker": "D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\Assets\\Scripts\\DamageObj.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DamageObj.cs",
@@ -104,7 +105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "Bullet.cs",
               "DocumentMoniker": "D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\Assets\\Scripts\\Bullet.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Bullet.cs",
@@ -117,7 +118,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "EnemyKnife.cs",
               "DocumentMoniker": "D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\Assets\\Scripts\\EnemyAI\\EnemyKnife.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyAI\\EnemyKnife.cs",
@@ -130,7 +131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "EnemyGun.cs",
               "DocumentMoniker": "D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\Assets\\Scripts\\EnemyAI\\EnemyGun.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyAI\\EnemyGun.cs",
@@ -139,38 +140,11 @@
               "ViewState": "AQIAACMAAAAAAAAAAAA9wD4AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-23T15:31:44.158Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EnemyKit1.cs",
-              "DocumentMoniker": "D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\Assets\\Scripts\\EnemyAI\\EnemyKit1.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyAI\\EnemyKit1.cs",
-              "ToolTip": "D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\Assets\\Scripts\\EnemyAI\\EnemyKit1.cs",
-              "RelativeToolTip": "Assets\\Scripts\\EnemyAI\\EnemyKit1.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAgwCsAAABOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T01:29:13.68Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EnemyHP.cs",
-              "DocumentMoniker": "D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\Assets\\Scripts\\EnemyAI\\EnemyHP.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyAI\\EnemyHP.cs",
-              "ToolTip": "D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\Assets\\Scripts\\EnemyAI\\EnemyHP.cs",
-              "RelativeToolTip": "Assets\\Scripts\\EnemyAI\\EnemyHP.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABQAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T01:10:01.613Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "Aim.cs",
               "DocumentMoniker": "D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\Assets\\Scripts\\Aim.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Aim.cs",
@@ -182,7 +156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "OstSystem.cs",
               "DocumentMoniker": "D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\Assets\\OstSystem.cs",
               "RelativeDocumentMoniker": "Assets\\OstSystem.cs",
@@ -194,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 5,
               "Title": "Alert.cs",
               "DocumentMoniker": "D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\Assets\\Scripts\\Alert.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Alert.cs",
@@ -206,51 +180,75 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 3,
               "Title": "RinYandere.cs",
               "DocumentMoniker": "D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\Assets\\Scripts\\RinYandere.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\RinYandere.cs",
               "ToolTip": "D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\Assets\\Scripts\\RinYandere.cs",
               "RelativeToolTip": "Assets\\Scripts\\RinYandere.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAgwBoAAACRAAAA",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADtSURBVDhPYxgFCHDh4YX/sQtj/6u3qP9XblL\u002BHzk/8j9UiuHtx7f/VZpVwHxkNggwgohLjy79D18SzmAua86QZJbEwM/Bz3D91XWGCNMIRpAGo34jsGJkwMrMynCn9g5YP0PK0pT/3tO9/3/58gVuMjLA5wImEHH68WkGN3U3Bh4eHoiJJACwAb/\u002B/gI7CRuAeeH3398M8g3ycDayKxjC5oX9D54TjNX5IIDPC2Ann7x78n/E4ggGDw0PhgiDCLBrLj2/xJBhl0HQS3AFe67t\u002BT/lyBSGO2/uMHCxcTHYK9szdAd2kxwmIw8wMAAAESl0qwYO77cAAAAASUVORK5CYII=",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABoAAACRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-04T12:42:57.135Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 4,
               "Title": "EnemyHP.cs",
               "DocumentMoniker": "D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\Assets\\Scripts\\EnemyHP.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyHP.cs",
               "ToolTip": "D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\Assets\\Scripts\\EnemyHP.cs",
               "RelativeToolTip": "Assets\\Scripts\\EnemyHP.cs",
-              "ViewState": "AQIAADIAAAAAAAAAAAAwwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-23T12:16:47.325Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 0,
               "Title": "RinHealth.cs",
               "DocumentMoniker": "D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\Assets\\Scripts\\RinHealth.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\RinHealth.cs",
               "ToolTip": "D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\Assets\\Scripts\\RinHealth.cs",
               "RelativeToolTip": "Assets\\Scripts\\RinHealth.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAYwCcAAAAaAAAA",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADtSURBVDhPYxgFCHDh4YX/sQtj/6u3qP9XblL\u002BHzk/8j9UiuHtx7f/VZpVwHxkNggwgohLjy79D18SzmAua86QZJbEwM/Bz3D91XWGCNMIRpAGo34jsGJkwMrMynCn9g5YP0PK0pT/3tO9/3/58gVuMjLA5wImEHH68WkGN3U3Bh4eHoiJJACwAb/\u002B/gI7CRuAeeH3398M8g3ycDayKxjC5oX9D54TjNX5IIDPC2Ann7x78n/E4ggGDw0PhgiDCLBrLj2/xJBhl0HQS3AFe67t\u002BT/lyBSGO2/uMHCxcTHYK9szdAd2kxwmIw8wMAAAESl0qwYO77cAAAAASUVORK5CYII=",
-              "WhenOpened": "2024-03-01T04:01:10.435Z"
+              "ViewState": "AQIAACYAAAAAAAAAAAAwwDMAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-01T04:01:10.435Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "Rindik.cs",
               "DocumentMoniker": "D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\Assets\\Scripts\\Rindik.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Rindik.cs",
               "ToolTip": "D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\Assets\\Scripts\\Rindik.cs",
               "RelativeToolTip": "Assets\\Scripts\\Rindik.cs",
-              "ViewState": "AQIAAC8AAAAAAAAAAAAwwFcAAAARAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-01T03:57:13.163Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EnemyHP.cs",
+              "DocumentMoniker": "D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\Assets\\Scripts\\EnemyAI\\EnemyHP.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyAI\\EnemyHP.cs",
+              "ToolTip": "D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\Assets\\Scripts\\EnemyAI\\EnemyHP.cs",
+              "RelativeToolTip": "Assets\\Scripts\\EnemyAI\\EnemyHP.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABQAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-24T01:10:01.613Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EnemyKit1.cs",
+              "DocumentMoniker": "D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\Assets\\Scripts\\EnemyAI\\EnemyKit1.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyAI\\EnemyKit1.cs",
+              "ToolTip": "D:\\Games\\Unity\\GameAboutRin\\Rin Adventure\\Assets\\Scripts\\EnemyAI\\EnemyKit1.cs",
+              "RelativeToolTip": "Assets\\Scripts\\EnemyAI\\EnemyKit1.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAgwCsAAABOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-24T01:29:13.68Z"
             },
             {
               "$type": "Document",

@@ -8,7 +8,8 @@ public class Rindik : MonoBehaviour
 {
     private Animator[] anim;
     private Rigidbody2D rb;
-    [SerializeField] private float speed, movespeed, jumpForce, timeDeactive;
+    [SerializeField] private float speed, movespeed, jumpForce;
+    public float timeDeactive;
     [SerializeField] private LayerMask layer;
     [SerializeField] private LayerMask enLayer;
     [SerializeField] private Transform posJump;

@@ -7,6 +7,13 @@ struct TextLine
 {
     public string text;
     public float speed, timeAlpha, timeNext;
+    public ActiveOrNot[] activeOrNot;
+}
+[System.Serializable]
+struct ActiveOrNot
+{
+    public GameObject obj;
+    public bool active;
 }
 public class UndertaleTextEffect : MonoBehaviour
 {
@@ -31,6 +38,10 @@ public class UndertaleTextEffect : MonoBehaviour
     void StartText()
     {
         StartCoroutine(ShowText());
+        for (int i = 0; i < messages[currentMessageIndex].activeOrNot.Length; i++)
+        {
+            messages[currentMessageIndex].activeOrNot[i].obj.SetActive(messages[currentMessageIndex].activeOrNot[i].active);
+        }
     }
     IEnumerator ShowText()
     {
@@ -39,20 +50,31 @@ public class UndertaleTextEffect : MonoBehaviour
         string message = messages[currentMessageIndex].text;
         for (int i = 0; i <= message.Length; i++)
         {
+            voice.Play();
             currentText = message.Substring(0, i);
             textObject.text = currentText;
             yield return new WaitForSeconds(1/messages[currentMessageIndex].speed);
-            voice.Play();
         }
     }
     private void NextMessage()
     {
+        for (int i = 0; i < messages[currentMessageIndex].activeOrNot.Length; i++)
+        {
+            messages[currentMessageIndex].activeOrNot[i].obj.SetActive(!messages[currentMessageIndex].activeOrNot[i].active);
+        }
         if (currentMessageIndex < messages.Length - 1)
         {
             currentMessageIndex++;
             textObject.text = "";
             StartCoroutine(ShowText());
+            for (int i = 0; i < messages[currentMessageIndex].activeOrNot.Length; i++)
+            {
+                messages[currentMessageIndex].activeOrNot[i].obj.SetActive(messages[currentMessageIndex].activeOrNot[i].active);
+            }
         }
-        else gameObject.SetActive(false);
+        else
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

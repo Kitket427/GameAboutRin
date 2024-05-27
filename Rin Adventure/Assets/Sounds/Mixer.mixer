@@ -16,6 +16,8 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
+  - guid: b4eb2ccfdc154bf43b3c4491607733c0
+    name: gameSpeed
   - guid: 81a4c3087f6468f49a77056be2e604b3
     name: ostSpeed
   m_AudioMixerGroupViews:
