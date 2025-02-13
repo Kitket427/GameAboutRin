@@ -6,7 +6,8 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 public class Rindik : MonoBehaviour
 {
-    private Animator[] anim;
+    [SerializeField] private Animator[] anim;
+    [SerializeField] private float layerInd;
     private Rigidbody2D rb;
     [SerializeField] private float speed, movespeed, jumpForce;
     public float timeDeactive;
@@ -15,6 +16,7 @@ public class Rindik : MonoBehaviour
     [SerializeField] private Transform posJump;
     [SerializeField] private Vector2 hitboxJump;
     private bool isGround;
+    private float koyotaTime;
     private bool isEnemy;
     [SerializeField] private CinemachineVirtualCamera prioIdle;
     [SerializeField] private CinemachineBrain brainIdle;
@@ -29,12 +31,13 @@ public class Rindik : MonoBehaviour
     private bool dashReady = true;
     private RinHealth rinShield;
     [SerializeField] private AudioSource dashSFX;
-    public bool activeControll;
+    public bool activeControll, right;
 
     [SerializeField] private float speedAttack, timePower, timePowerUp;
     [SerializeField] private Image rinHair;
 
     [SerializeField] private AudioSource bonus;
+    [SerializeField] private bool oprimizm;
     private void Start()
     {
         sfx = GetComponent<AudioSource>();
@@ -55,9 +58,16 @@ public class Rindik : MonoBehaviour
     private void FixedUpdate()
     {
         if(dash == false) rb.velocity = new Vector2(movespeed * speed, rb.velocity.y);
+        if (activeControll == false)
+        {
+            if (right) rb.velocity = new Vector2(0.5f * speed, rb.velocity.y);
+            else rb.velocity = new Vector2(0, rb.velocity.y);
+        }
     }
     private void Update()
     {
+        anim[0].SetLayerWeight(1, layerInd);
+        anim[1].SetLayerWeight(1, layerInd);
         if ((Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow) == false || Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D) == false || Input.GetAxisRaw("JoyX") < 0) && activeControll)
         {
             movespeed = -1;
@@ -71,7 +81,7 @@ public class Rindik : MonoBehaviour
             start = true;
         }
         else movespeed = 0;
-        if((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.JoystickButton4) || Input.GetKeyDown(KeyCode.JoystickButton5)) && dashReady && activeControll)
+        if((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.JoystickButton4) || Input.GetKeyDown(KeyCode.JoystickButton5)) && dashReady && activeControll)
         {
             rb.velocity = new Vector2(transform.localScale.x * 300, 0);
             dash = true;
@@ -91,7 +101,10 @@ public class Rindik : MonoBehaviour
         if (rb.velocity.x > -1f && rb.velocity.x < 1f) anim[0].SetBool("move", false);
         else anim[0].SetBool("move", true);
 
-        isGround = Physics2D.OverlapBox(posJump.position, hitboxJump, 0, layer);
+        if (rb.velocity.y < 1 || transform.parent != null) isGround = Physics2D.OverlapBox(posJump.position, hitboxJump, 0, layer);
+        else isGround = false;
+        if (isGround) koyotaTime = 0;
+        else koyotaTime += Time.deltaTime;
         anim[0].SetBool("ground", isGround);
         isEnemy = Physics2D.OverlapBox(posJump.position, hitboxJump, 0, enLayer);
         if (isEnemy && isGround == false)
@@ -101,20 +114,21 @@ public class Rindik : MonoBehaviour
             start = true;
             anim[0].SetTrigger("attack");
         }
-        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.JoystickButton0)) && isGround && activeControll)
+        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.JoystickButton0)) && koyotaTime <= 0.2f && activeControll)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce * 10);
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce * 12);
             timeDeactive = 0;
             start = true;
             jump = true;
             sfx.Play();
+            koyotaTime = 0.3f;
         }
-        if ((Input.GetKeyUp(KeyCode.Z) || Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.JoystickButton0)) && rb.velocity.y > 0 && jump)
+        if ((Input.GetKeyUp(KeyCode.Z) || Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.Mouse1) || Input.GetKeyUp(KeyCode.JoystickButton0)) && rb.velocity.y > 0 && jump)
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
             jump = false;
         }
-        if(rb.velocity.y < -75) rb.velocity = new Vector2(rb.velocity.x, -75);
+        if(rb.velocity.y < -175) rb.velocity = new Vector2(rb.velocity.x, -175);
 
         if (rb.velocity.y > 1) eyes.localPosition = new Vector2(0.5f, 0f);
         else if(start) eyes.localPosition = new Vector2(0.5f, -0.5f);
@@ -166,7 +180,16 @@ public class Rindik : MonoBehaviour
         {
             timeDeactive = 0;
         }
-        mixerGroup.audioMixer.SetFloat("ostSpeed", ostSpeed);
+        if(ostSpeed == 1 && oprimizm == false)
+        {
+            mixerGroup.audioMixer.SetFloat("ostSpeed", 1);
+            oprimizm = true;
+        }
+        if(ostSpeed != 1 && oprimizm == true)
+        {
+            oprimizm = false;
+        }
+        if(oprimizm == false) mixerGroup.audioMixer.SetFloat("ostSpeed", ostSpeed);
 
         if(timePower <= 0)
         {

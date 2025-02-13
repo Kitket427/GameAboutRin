@@ -664,7 +664,7 @@ TextureImporter:
         width: 4
         height: 2
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -718,6 +718,153 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: PenguinSprite_29
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 34
+        width: 10
+        height: 10
+      alignment: 9
+      pivot: {x: 0.55, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bffa80d423781c4ea177ddb33fde902
+      internalID: 715129088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PenguinSprite_30
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 39
+        width: 3
+        height: 5
+      alignment: 9
+      pivot: {x: 0.33333334, y: 0.8}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 220140b2a7df92b4dbc9e1fe56677586
+      internalID: -1226039876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PenguinSprite_31
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 39
+        width: 3
+        height: 5
+      alignment: 9
+      pivot: {x: 0.33333334, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88056886ee6f8f84ca31589e5c5bcb55
+      internalID: -1504226881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PenguinSprite_32
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 36
+        width: 4
+        height: 2
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e057cc212347c1d42bba1e085546d702
+      internalID: 1326990875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PenguinSprite_33
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 35
+        width: 3
+        height: 3
+      alignment: 9
+      pivot: {x: 0.6666667, y: 0.6666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05b610ce2bb1e074aa6fc3d112da5a4d
+      internalID: 284538225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PenguinSprite_34
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 45
+        width: 14
+        height: 8
+      alignment: 9
+      pivot: {x: 0.42857146, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c445dc487fa495b4c9b3bcd96365154f
+      internalID: -1089708255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PenguinSprite_35
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 46
+        width: 9
+        height: 6
+      alignment: 9
+      pivot: {x: 0.11111111, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a47a01cb8652e0d4497f6309aa0e451c
+      internalID: 852437780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -751,7 +898,14 @@ TextureImporter:
       PenguinSprite_26: 1043651668
       PenguinSprite_27: -1674007978
       PenguinSprite_28: 146091846
+      PenguinSprite_29: 715129088
       PenguinSprite_3: -1000207131
+      PenguinSprite_30: -1226039876
+      PenguinSprite_31: -1504226881
+      PenguinSprite_32: 1326990875
+      PenguinSprite_33: 284538225
+      PenguinSprite_34: -1089708255
+      PenguinSprite_35: 852437780
       PenguinSprite_4: -1973135164
       PenguinSprite_5: -128344962
       PenguinSprite_6: -2030800141

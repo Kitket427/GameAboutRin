@@ -6,6 +6,11 @@ public class Alert : MonoBehaviour
 {
     [SerializeField] private GameObject[] lights;
     public bool alertLights;
+    [SerializeField]private bool active;
+    private void Start()
+    {
+        if(active == false)Off();
+    }
     private void Update()
     {
         if (alertLights)

@@ -19,8 +19,18 @@ public class RinHealth : MonoBehaviour, ITakeDamage
     [SerializeField] private GameOver gameOver;
     [SerializeField] private GameObject heartbeat;
     [SerializeField] private AudioSource bonus;
+    [SerializeField] private GameObject endEffect;
+    [SerializeField] private float speedOst;
+    [SerializeField] private bool optimizm;
+    [SerializeField] private bool gameOverSystemOff;
     private void Start()
     {
+        if (gameOverSystemOff == false)
+        {
+            lifes = 5 + 2 * (PlayerPrefs.GetInt("GameOver") / 3);
+            Debug.Log("GameOvers " + PlayerPrefs.GetInt("GameOver"));
+        }
+        if (lifes > 15) lifes = 15;
         maxLifes = lifes;
         UIactive();
         foreach (var sprite in sprites)
@@ -30,20 +40,41 @@ public class RinHealth : MonoBehaviour, ITakeDamage
     }
     void Update()
     {
-        if(Time.timeScale < 1 && Time.timeScale != 0)
+        if (speedOst != 1)
         {
-            Time.timeScale += Time.deltaTime;
+            if (Time.timeScale < 1 && Time.timeScale != 0)
+            {
+                Time.timeScale += Time.deltaTime;
+            }
+            else
+            {
+                Time.timeScale = 1;
+            }
         }
-        else
+        if (Time.timeScale == 1 && optimizm == false)
         {
-            Time.timeScale = 1;
+            mixerGroup.audioMixer.SetFloat("gameSpeed", 1);
+            optimizm = true;
         }
-        mixerGroup.audioMixer.SetFloat("gameSpeed", Time.timeScale);
+        if (Time.timeScale != 1 && optimizm == true)
+        {
+            optimizm = false;
+        }
+        if (optimizm == false) mixerGroup.audioMixer.SetFloat("gameSpeed", Time.timeScale);
+        if (speedOst == 1) Time.timeScale = 1;
+        if(Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.JoystickButton3))
+        {
+            Time.timeScale = 1f;
+            shield = false;
+            dash = false;
+            lifes = 1;
+            gameObject.GetComponent<ITakeDamage>().TakeDamage(1);
+        }
     }
     private void UIactive()
     {
-        hearts[0].fillAmount = lifes * 1f / 10f;
-        hearts[1].fillAmount = maxLifes * 1f / 10f;
+        hearts[0].fillAmount = lifes * 1f / 20f;
+        hearts[1].fillAmount = maxLifes * 1f / 20f;
         anim.speed = maxLifes * 1f / lifes * 1f;
         if (lifes == 1) heartbeat.SetActive(true);
         else heartbeat.SetActive(false);
@@ -53,12 +84,11 @@ public class RinHealth : MonoBehaviour, ITakeDamage
         GetComponent<Rindik>().timeDeactive = 0;
         if (shield == false && dash == false)
         {
-            if (damage < 99)
-            {
-                lifes -= 1;
-                if(lifes > 0) Time.timeScale = 0.1f;
-            }
+            if (damage < 49) lifes -= 1;
+            else if (damage < 99) lifes -= 2;
+            else if (lifes > 1) lifes = 1;
             else lifes = 0;
+            if (lifes > 0) Time.timeScale = 0.1f;
             UIactive();
             InvokeRepeating(nameof(Blink), 0, 0.02f);
             Invoke(nameof(BlinkStop), 2f);
@@ -66,7 +96,13 @@ public class RinHealth : MonoBehaviour, ITakeDamage
             shield = true;
             if (lifes <= 0)
             {
-                for(int i = 0; i < 4; i++) Instantiate(effect, transform.position, Quaternion.identity);
+                if (gameOverSystemOff == false)
+                {
+                    PlayerPrefs.SetInt("GameOver", (PlayerPrefs.GetInt("GameOver") + 1));
+                    PlayerPrefs.SetInt("Death", (PlayerPrefs.GetInt("Death") + 1));
+                }
+                for (int i = 0; i < 4; i++) Instantiate(effect, transform.position, Quaternion.identity);
+                if(endEffect) Instantiate(endEffect, transform.position, Quaternion.identity);
                 gameOver.Game();
                 gameObject.SetActive(false);
             }
@@ -111,7 +147,7 @@ public class RinHealth : MonoBehaviour, ITakeDamage
                 sprite.material = materials[0];
             }
             blink = false;
-            Invoke(nameof(BlinkOneHit), 0.7f);
+            if(lifes == 1)Invoke(nameof(BlinkOneHit), 0.7f);
         }
         else
         {

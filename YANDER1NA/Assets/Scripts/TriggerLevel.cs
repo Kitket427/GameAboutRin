@@ -12,9 +12,13 @@ public class TriggerLevel : MonoBehaviour
     [SerializeField] private Trigger[] triggers;
     [SerializeField] private Type type;
     [SerializeField] private float time;
+    [SerializeField] private EnemySpawner[] enemySpawner;
+    private OstSystem ost;
+    [SerializeField] private bool alert;
     private void Start()
     {
-        if(type == Type.start)
+        if (FindObjectOfType<OstSystem>()) ost = FindObjectOfType<OstSystem>();
+        if (type == Type.start)
         {
             Invoke(nameof(TriggerActivate), time);
         }
@@ -33,6 +37,14 @@ public class TriggerLevel : MonoBehaviour
         {
             trigger.obj.SetActive(trigger.active);
         }
+        if (enemySpawner.Length > 0)
+        {
+            for (int i = 0; i < enemySpawner.Length; i++)
+            {
+                enemySpawner[i].Spawn();
+            }
+        }
+        if(alert) ost.Battle();
         gameObject.SetActive(false);
     }
 }

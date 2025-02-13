@@ -16,9 +16,12 @@ public class Menu : MonoBehaviour
     [SerializeField] private AudioMixerGroup audioMixer;
     private bool active;
     [SerializeField] private GameObject pause;
+    private float volume;
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        volume = audioSource.volume;
+        audioSource.volume = 0;
         button = EventSystem.current.currentSelectedGameObject;
         sliderCount = new float[2];
         if (PlayerPrefs.HasKey("ost") == false)
@@ -41,6 +44,12 @@ public class Menu : MonoBehaviour
         else audioMixer.audioMixer.SetFloat("ost", -80);
 
         Invoke(nameof(Active), 0.1f);
+        Cursor.visible = false;
+        Invoke(nameof(SFX), 0.6f);
+    }
+    void SFX()
+    {
+        audioSource.volume = volume;
     }
     void Update()
     {

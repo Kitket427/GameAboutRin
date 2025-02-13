@@ -28,7 +28,7 @@ public class EnemyTeleport : MonoBehaviour
             {
                 item.enabled = true;
             }
-            transform.Translate(Vector2.up * Time.deltaTime * 222);
+            transform.Translate(Vector2.up * Time.deltaTime * 333);
             if (timer >= time + 0.6f) Destroy(gameObject);
             anim.SetBool("ground", false);
         }

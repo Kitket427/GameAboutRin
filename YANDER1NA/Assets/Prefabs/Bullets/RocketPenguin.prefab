@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1086243837
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 110
   m_Sprite: {fileID: -1973135164, guid: d52168c185822844c88f22206aee7fac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -155,7 +155,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1086243837
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 112
   m_Sprite: {fileID: -1973135164, guid: d52168c185822844c88f22206aee7fac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -447,7 +447,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1086243837
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 111
   m_Sprite: {fileID: 1735723601, guid: d52168c185822844c88f22206aee7fac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -531,7 +531,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1086243837
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 110
   m_Sprite: {fileID: 270885658, guid: d52168c185822844c88f22206aee7fac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -697,7 +697,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1086243837
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 112
   m_Sprite: {fileID: 270885658, guid: d52168c185822844c88f22206aee7fac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -794,7 +794,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1086243837
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -382833699, guid: d52168c185822844c88f22206aee7fac, type: 3}
   m_Color: {r: 1, g: 1, b: 0, a: 1}
@@ -868,6 +868,7 @@ MonoBehaviour:
   col: 1
   deadEffect: {fileID: 324741321479997259, guid: 3b8c964b68852c34b93da880cea303e7, type: 3}
   deadTime: 4
+  ricoshet: 0
 --- !u!114 &4491297463312003470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -880,7 +881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcec56dbe5f5e2e44a2d026939878ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 7
+  damage: 90
   attack: 1
   reload: 0
   reverse: 0
@@ -904,6 +905,8 @@ MonoBehaviour:
   randomExtraRotate: 0.3
   speedExtraRotate: 1440
   timeExtraRotate: 0.3
+  activateTurret: 0
+  distance: 0
 --- !u!82 &3237487557490680702
 AudioSource:
   m_ObjectHideFlags: 0

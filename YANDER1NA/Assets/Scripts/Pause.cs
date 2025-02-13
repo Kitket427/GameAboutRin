@@ -24,8 +24,7 @@ public class Pause : MonoBehaviour
     {
         if (menu.activeInHierarchy)
         {
-            rin.activeControll = true;
-            yandere.enabled = true;
+            Invoke(nameof(PauseOff), 0.01f);
             audioMixer.audioMixer.SetFloat("lowpass", 22000);
             menu.SetActive(false);
         }
@@ -36,5 +35,10 @@ public class Pause : MonoBehaviour
             audioMixer.audioMixer.SetFloat("lowpass", 2000);
             menu.SetActive(true);
         }
+    }
+    void PauseOff()
+    {
+        rin.activeControll = true;
+        yandere.enabled = true;
     }
 }

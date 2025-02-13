@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3308737972173160710}
   - component: {fileID: 6498992386034726323}
   - component: {fileID: 3277687188327954937}
+  - component: {fileID: 804264155200040578}
   m_Layer: 9
   m_Name: Light 2D (1)
   m_TagString: Untagged
@@ -53,7 +54,7 @@ MonoBehaviour:
   m_Intensity: 35
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000c32debe3038624e4033c41bf
+  m_ApplyToSortingLayers: 00000000c32debe3038624e4033c41bffbf02e3f0d0fc47b2f60c77f9dfbeb6a
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -104,6 +105,102 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!82 &804264155200040578
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2961590454456001693}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 8659500465266458498, guid: 28d00fd2e69bc4a499ea9c19515cd917, type: 2}
+  m_audioClip: {fileID: 8300000, guid: c253cc8a90c355e41855a9fcd0bb635f, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.12
+  m_Pitch: 0.7
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 30
+  MaxDistance: 150
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7229938264854883547
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +279,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1086243837
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -382833699, guid: d52168c185822844c88f22206aee7fac, type: 3}
   m_Color: {r: 1, g: 1, b: 0, a: 1}
@@ -256,6 +353,7 @@ MonoBehaviour:
   col: 1
   deadEffect: {fileID: 1203146208320293541, guid: 4cf4fa0a5c8da2542a4282fffb858c6d, type: 3}
   deadTime: 2
+  ricoshet: 0
 --- !u!114 &4422821571884894428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,7 +366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcec56dbe5f5e2e44a2d026939878ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 7
+  damage: 55
   attack: 1
   reload: 0
   reverse: 0
@@ -292,6 +390,8 @@ MonoBehaviour:
   randomExtraRotate: 0
   speedExtraRotate: 0
   timeExtraRotate: 0
+  activateTurret: 0
+  distance: 0
 --- !u!82 &5918976423086888874
 AudioSource:
   m_ObjectHideFlags: 0
@@ -302,11 +402,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 8659500465266458498, guid: 28d00fd2e69bc4a499ea9c19515cd917, type: 2}
-  m_audioClip: {fileID: 8300000, guid: c253cc8a90c355e41855a9fcd0bb635f, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: e37568ac5b283a14e8eeefa41c6a6c14, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 0.1
-  m_Pitch: 0.7
-  Loop: 1
+  m_Pitch: 1.2
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -348,7 +448,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -440,7 +540,7 @@ MonoBehaviour:
   m_Intensity: 15
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000c32debe3038624e4033c41bf
+  m_ApplyToSortingLayers: 00000000c32debe3038624e4033c41bffbf02e3f0d0fc47b2f60c77f9dfbeb6a
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0

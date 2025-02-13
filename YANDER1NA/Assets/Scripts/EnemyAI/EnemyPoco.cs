@@ -6,7 +6,7 @@ public class EnemyPoco : MonoBehaviour
 {
     [SerializeField] private float maxDistance = 130;
     private Transform target;
-    [SerializeField] private float time, timeChill;
+    [SerializeField] private float time, timeChill, reload;
     [SerializeField] private Transform pos;
     [SerializeField] private GameObject[] warnings;
     private OstSystem ost;
@@ -14,6 +14,7 @@ public class EnemyPoco : MonoBehaviour
     [SerializeField] private GameObject rocket;
     private bool rocketLaunch;
     [SerializeField] private EnemySpawner[] enemySpawner;
+    [SerializeField] private bool restart;
     private void Start()
     {
         target = FindObjectOfType<AimPosPlayer>().GetComponent<Transform>();
@@ -32,9 +33,9 @@ public class EnemyPoco : MonoBehaviour
             }
             if (ost) ost.Battle();
         }
-        if(time >= timeChill + 1f && rocketLaunch == false)
+        if(time >= timeChill + 1f + reload && rocketLaunch == false)
         {
-            rocket.transform.localScale = new Vector3(1, transform.localScale.x, 1);
+            rocket.transform.localScale = new Vector3(1, transform.lossyScale.x, 1);
             Instantiate(rocket, pos.position, Quaternion.Euler(0, 0, 90));
             rocketLaunch = true;
             if (enemySpawner.Length > 0)
@@ -44,7 +45,17 @@ public class EnemyPoco : MonoBehaviour
                     enemySpawner[i].Spawn();
                 }
             }
-            Destroy(gameObject);
+            if (restart == false) Destroy(gameObject);
+            else
+            {
+                time = 0;
+                foreach (var warning in warnings)
+                {
+                    warning.SetActive(false);
+                }
+                rocketLaunch = false;
+                gameObject.SetActive(false);
+            }
         }
     }
     private void OnEnable()

@@ -10,20 +10,35 @@ public class Loading : MonoBehaviour
     [SerializeField] private Text BarTxt;
     [SerializeField] private int SceneID;
     [SerializeField] private bool newGame;
+    [SerializeField] private bool survial;
     private void Start()
     {
-        if(SceneID == 427)
+        if (survial == false)
         {
-            SceneID = 0;
+            if (SceneID != -1)
+            {
+                if (SceneID != 0)
+                {
+                    if (PlayerPrefs.GetInt("GameOver") > 15) PlayerPrefs.SetInt("GameOver", 15);
+                    PlayerPrefs.SetInt("GameOver", (PlayerPrefs.GetInt("GameOver") - 1));
+                    if (PlayerPrefs.GetInt("GameOver") < 0) PlayerPrefs.SetInt("GameOver", 0);
+                    while (PlayerPrefs.GetInt("GameOver") % 3 != 0) PlayerPrefs.SetInt("GameOver", (PlayerPrefs.GetInt("GameOver") - 1));
+                }
+            }
+            else if (newGame || PlayerPrefs.HasKey("SaveLevel") == false)
+            {
+                PlayerPrefs.DeleteKey("SaveLevel");
+                PlayerPrefs.DeleteKey("GameOver");
+                PlayerPrefs.DeleteKey("Death");
+                PlayerPrefs.DeleteKey("Time");
+                SceneID = 1;
+            }
+            else
+            {
+                SceneID = PlayerPrefs.GetInt("SaveLevel");
+            }
         }
-        else if(newGame || PlayerPrefs.HasKey("SaveLevel") == false)
-        {
-            SceneID = 1;
-        }
-        else
-        {
-            SceneID = PlayerPrefs.GetInt("SaveLevel");
-        }
+        else SceneID = 27;
         Invoke(nameof(StartLoad), 1);
     }
     void StartLoad()

@@ -9,10 +9,12 @@ public class OstSystem : MonoBehaviour
     [SerializeField] private Alert[] alerts;
     [SerializeField] private GameObject alertSFX;
     [SerializeField] private bool alwaysActive;
+    [SerializeField] private bool activeOnStart;
     private void Start()
     {
         anim = GetComponent<Animator>();
         alerts = FindObjectsOfType<Alert>();
+        if (activeOnStart) Battle();
     }
     public void Battle()
     {

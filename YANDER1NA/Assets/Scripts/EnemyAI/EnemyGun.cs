@@ -9,7 +9,7 @@ public class EnemyGun : MonoBehaviour
     private Animator anim;
     private Rigidbody2D rb;
     private Transform target;
-    [SerializeField] private float speed, animSpeed, currentSpeed, time, timeChill, reload, jumpHowManyInTen, jumpForce;
+    [SerializeField] private float speed, animSpeed, currentSpeed, time, timeChill, timeOnEnable, reload, jumpHowManyInTen, jumpForce;
     [SerializeField] private int count, currentCount;
     [SerializeField] private GameObject[] bullets;
     [SerializeField] private Transform pos;
@@ -22,16 +22,19 @@ public class EnemyGun : MonoBehaviour
     [SerializeField] private bool notAim;
     [SerializeField] private bool notStop;
     [SerializeField] private bool inTank;
+    [SerializeField] private bool groundForever;
     private void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         target = FindObjectOfType<AimPosPlayer>().GetComponent<Transform>();
         anim.speed = speed * 0.03f;
+        if (speed == 0) anim.speed = 1;
         anim.SetBool("minus", true);
         animGun = gun.GetComponentInChildren<Animator>();
         if (FindObjectOfType<OstSystem>()) ost = FindObjectOfType<OstSystem>();
-        time = timeChill;
+        time = timeOnEnable;
+        currentCount = count;
     }
     private void FixedUpdate()
     {
@@ -79,7 +82,7 @@ public class EnemyGun : MonoBehaviour
             else transform.localScale = new Vector3(-1, 1, 1);
             gun.rotation = Quaternion.Euler(0, 0, rotateZ);
         }
-        if (rb.velocity.y > 0.2f || rb.velocity.y < -0.2f) anim.SetBool("ground", false);
+        if ((rb.velocity.y > 0.2f || rb.velocity.y < -0.2f) && groundForever == false) anim.SetBool("ground", false);
         else anim.SetBool("ground", true);
         if (time > timeChill + 1 && (Vector2.Distance(transform.position, target.position) < maxDistance + 5 || notStop))
         {
@@ -110,8 +113,8 @@ public class EnemyGun : MonoBehaviour
     }
     private void OnDisable()
     {
-        time = 0;
-        currentCount = 0;
+        time = timeOnEnable;
+        currentCount = count;
         warning.SetActive(false);
     }
 }

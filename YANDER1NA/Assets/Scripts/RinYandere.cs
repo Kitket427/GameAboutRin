@@ -24,8 +24,9 @@ public class RinYandere : MonoBehaviour
             }
         }
     }
-    public void Attack()
+    private void Attack()
     {
         sfx.Play();
+        Debug.Log("Wow");
     }
 }

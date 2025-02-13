@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private bool col;
     [SerializeField] private GameObject deadEffect;
     [SerializeField] private float deadTime;
+    [SerializeField] private bool ricoshet;
     private void Start()
     {
         Invoke(nameof(DestroyBullet), deadTime);
@@ -25,6 +26,7 @@ public class Bullet : MonoBehaviour
     {
         if (speed > 0) speed = -speed;
         gameObject.layer = 8;
+        if(ricoshet)GetComponent<AudioSource>().Play();
     }
     private void DestroyBullet()
     {
