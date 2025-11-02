@@ -5792,6 +5792,7 @@ MonoBehaviour:
   timerStop: 1
   timeRestart: 0
   timeRecord: 1
+  timePlayer: 0
   texts:
   - {fileID: 983624228}
   - {fileID: 1708241451}

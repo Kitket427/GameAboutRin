@@ -90,7 +90,7 @@ public class EnemyGun : MonoBehaviour
             {
                 Instantiate(item, pos.position, Quaternion.Euler(0, 0, rotateZ));
             }
-            animGun.SetTrigger("fire");
+            if(animGun)animGun.SetTrigger("fire");
             currentCount--;
             time = timeChill + 1 - reload;
         }
